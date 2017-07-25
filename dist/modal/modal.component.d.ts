@@ -1,0 +1,32 @@
+import { ElementRef, AfterViewInit, OnDestroy, ViewContainerRef, ComponentFactoryResolver, ReflectiveInjector } from '@angular/core';
+import { Observable } from 'rxjs';
+import { IModalResult, IModalOptions, IModal } from './interfaces';
+import { ModalStatus } from './constants';
+export declare class NzbModalComponent implements AfterViewInit, OnDestroy, IModal {
+    private cfr;
+    modalElement: ElementRef;
+    dialogElement: ElementRef;
+    contentElement: ViewContainerRef;
+    modal: IModal;
+    options: IModalOptions;
+    content: any;
+    contentInjector: ReflectiveInjector;
+    private isViewInitialized$;
+    private heightChangeInterval;
+    private status$;
+    private contentRef;
+    private result;
+    constructor(cfr: ComponentFactoryResolver);
+    ngAfterViewInit(): void;
+    ngOnDestroy(): void;
+    setup(): void;
+    private updateOnModalHeightChanged();
+    private attachContent();
+    open(): void;
+    close(data: any): void;
+    dismiss(reason: any): void;
+    status(): Observable<ModalStatus>;
+    initialized(): Promise<void>;
+    opened(): Promise<void>;
+    closed(): Promise<IModalResult>;
+}
