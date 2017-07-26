@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
-import { NzbModalService } from './modal.service';
-import { NzbModalComponent } from './modal.component';
+import { NzbModalService } from './nzb-modal.service';
+import { NzbModalComponent } from './nzb-modal.component';
 var NzbModalModule = (function () {
     function NzbModalModule() {
     }
     NzbModalModule.decorators = [
         { type: NgModule, args: [{
-                    providers: [NzbModalService],
-                    declarations: [NzbModalComponent],
-                    entryComponents: [NzbModalComponent]
+                    providers: [
+                        NzbModalService
+                    ],
+                    declarations: [
+                        NzbModalComponent
+                    ],
+                    entryComponents: [
+                        NzbModalComponent
+                    ]
                 },] },
     ];
     /** @nocollapse */

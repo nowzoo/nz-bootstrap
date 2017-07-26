@@ -15,7 +15,13 @@
     "stripInternal": true,
     "skipLibCheck": true,
     "outDir": "dist",
-    "rootDir": "./tmp/src-inlined"
+    "rootDir": "./tmp/src-inlined",
+	"lib": [
+	    "ES5",
+	    "ES2015",
+	    "DOM",
+	    "ScriptHost"
+	]
   },
   "files": [
     "./tmp/src-inlined/index.ts"
